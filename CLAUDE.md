@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project
 
-Unity 6 (6000.4.7f1) 2D project named **PachinkoAsset**, using the Universal Render Pipeline (URP 17.4.0). The project is in early stage — no custom C# scripts exist yet; game logic should be added under `Assets/`.
+Unity 6 (6000.4.7f1) 2D project named **PachinkoAsset**, using the Universal Render Pipeline (URP 17.4.0). All game code lives under `Assets/_Pachinko/`.
 
 ## Key Packages
 
@@ -62,13 +62,41 @@ Get-Content "C:\Users\User\PachinkoAsset\editor_run.log" -Tail 30
 
 ## Architecture Notes
 
-- All game scripts belong under `Assets/_Pachinko/Scripts`
-- All Sprites are under `Assets/_Pachinko/Sprites`
-- All other assets in relevant folders
+- All game scripts: `Assets/_Pachinko/Scripts/` — subfolders `Core/`, `Config/`, `Views/`
+- All Sprites: `Assets/_Pachinko/Sprites/`
+- Editor-only scripts: `Assets/_Pachinko/Editor/` (stripped from builds)
 - URP 2D renderer is the active renderer; do not add 3D-only URP features.
 - Use the new **Input System** (`UnityEngine.InputSystem`) — the legacy Input Manager is not the primary input path.
 - The default scene is `Assets/Scenes/SampleScene.unity`.
 - `Assets/Settings/` holds URP pipeline assets; edit these (not GraphicsSettings directly) to change render features.
+
+### System Overview
+
+The game follows a strict **pure-C# core / MonoBehaviour shell** split:
+
+**Pure C# (no Unity dependency):**
+- `GameController` — explicit state machine (`Loading → Idle → Dropping → Resolving → RoundEnd`). Raises events; never touches GameObjects.
+- `ScoreManager` — accumulates round score; supports `IScoreModifier` chain for future multipliers.
+- `SeededPathAnimator` — generates waypoint arrays for deterministic ball paths; no MonoBehaviour.
+- `BoardConfig` — plain data model deserialized from JSON; includes `Validate()`.
+- `LocalJsonConfigProvider : IConfigProvider` — loads `StreamingAssets/boards/<id>.json` via Newtonsoft.Json with path-traversal guard and in-memory cache.
+
+**MonoBehaviours (Unity lifecycle):**
+- `GameBootstrapper` — scene entry point. Creates and wires all pure-C# systems, holds the `ObjectPool<BallView>`, and mediates between events and view calls.
+- `BoardView` — reads `PegView[]` and `ScoreBucketView[]` from prefab children; calls `Setup(cfg)` to configure each child.
+- `BallView` — physics ball (`Rigidbody2D`). Supports two modes: `LaunchPhysics` (normal) and `LaunchSeeded` (kinematic coroutine animation). Fires `OnSeededPathComplete` when seeded path ends.
+- `PegView`, `ScoreBucketView`, `UIController` — thin view components wired via Inspector or `GameBootstrapper`.
+
+**Wiring order in `GameBootstrapper.Start()`:**
+1. Load config via `IConfigProvider`.
+2. Instantiate pure-C# systems.
+3. Subscribe events (UI → game, game → score, score → UI).
+4. Call `BoardView.Setup(cfg)` then subscribe `ScoreBucketView.OnBallLanded` per bucket.
+5. Call `GameController.ConfigLoaded()` to enter `Idle`.
+
+**Seeded drops** (`BoardConfig.seededDrops[]`): each entry maps a `chipIndex` to a `targetBucketIndex`. When a drop index matches, `BallView` switches to kinematic animation via `SeededPathAnimator`; the bucket-landed callback is fired manually at path end instead of by physics trigger.
+
+**Dependencies:** `Newtonsoft.Json` (via Unity package) is required by `LocalJsonConfigProvider`.
 
 ## Prefab & Scene Conventions
 
