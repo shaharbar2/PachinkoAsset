@@ -1,0 +1,15 @@
+{
+  "boardId": "default",
+  "rows": 8,
+  "cols": 9,
+  "pegSpacing": 1.2,
+  "pegRadius": 0.15,
+  "bucketValues": [100, 500, 1000, 10000, 1000, 500, 100],
+  "chipsPerRound": 5,
+  "ballMass": 1.0,
+  "gravityScale": 2.0,
+  "pegRestitution": 0.55,
+  "randomImpulseRange": 2.5,
+  "resolveDelay": 0.6,
+  "seededDrops": []
+}
