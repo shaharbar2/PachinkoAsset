@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Get-ChildItem *)",
+      "WebFetch(domain:discussions.unity.com)",
+      "WebFetch(domain:docs.unity3d.com)",
+      "WebFetch(domain:unity.com)",
+      "WebFetch(domain:aaaslotgamedevelopment.com)",
+      "WebFetch(domain:ejaw.net)",
+      "WebFetch(domain:image-ppubs.uspto.gov)",
+      "WebFetch(domain:www.playbdgames.com)",
+      "WebFetch(domain:casinosblockchain.io)",
+      "Bash(Select-Object FullName)"
+    ]
+  }
+}
