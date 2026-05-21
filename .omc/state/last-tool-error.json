@@ -1,0 +1,7 @@
+{
+  "tool_name": "PowerShell",
+  "tool_input_preview": "{\"command\":\"cd \\\"C:\\\\Users\\\\User\\\\PachinkoAsset\\\"; git add CLAUDE.md AGENTS.md; git commit -m \\\"$(cat <<'EOF'\\ndocs: add CLAUDE.md project guidance and AGENTS.md\\n\\nEstablishes project conventions for...",
+  "error": "Exit code 1\nAt line:1 char:86\r\n+ ... inkoAsset\"; git add CLAUDE.md AGENTS.md; git commit -m \r\n\"$(cat <<'EOF'\r\n+                                                                  \r\n  ~\r\nMissing file specification after redirection operator.\r\nAt line:1 char:85\r\n+ ... inkoAsset\"; git add CLAUDE.md AGENTS.md; git commit -m \r\n\"$(cat <<'EOF'\r\n+                                                                  \r\n ~\r\nThe '<' operator is reserved for future use.\r\nAt line:1 char:86\r\n+ ... inkoAsset\"; git ad...",
+  "timestamp": "2026-05-21T19:56:10.639Z",
+  "retry_count": 1
+}

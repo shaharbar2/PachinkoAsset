@@ -1,0 +1,183 @@
+{
+  "version": "1.0.0",
+  "lastScanned": 1779390942519,
+  "projectRoot": "C:\\Users\\User\\PachinkoAsset",
+  "techStack": {
+    "languages": [],
+    "frameworks": [],
+    "packageManager": null,
+    "runtime": null
+  },
+  "build": {
+    "buildCommand": null,
+    "testCommand": null,
+    "lintCommand": null,
+    "devCommand": null,
+    "scripts": {}
+  },
+  "conventions": {
+    "namingStyle": null,
+    "importStyle": null,
+    "testPattern": null,
+    "fileOrganization": null
+  },
+  "structure": {
+    "isMonorepo": false,
+    "workspaces": [],
+    "mainDirectories": [],
+    "gitBranches": null
+  },
+  "customNotes": [],
+  "directoryMap": {
+    "Assets": {
+      "path": "Assets",
+      "purpose": "Static assets",
+      "fileCount": 8,
+      "lastAccessed": 1779390942499,
+      "keyFiles": [
+        "DefaultVolumeProfile.asset",
+        "DefaultVolumeProfile.asset.meta",
+        "InputSystem_Actions.inputactions",
+        "InputSystem_Actions.inputactions.meta",
+        "Scenes.meta"
+      ]
+    },
+    "Library": {
+      "path": "Library",
+      "purpose": null,
+      "fileCount": 24,
+      "lastAccessed": 1779390942501,
+      "keyFiles": [
+        "AnnotationManager",
+        "ArtifactDB",
+        "ArtifactDB-lock",
+        "BuildPlayer.prefs",
+        "BuildProfileContext.asset"
+      ]
+    },
+    "Logs": {
+      "path": "Logs",
+      "purpose": null,
+      "fileCount": 33,
+      "lastAccessed": 1779390942502,
+      "keyFiles": [
+        "AssetImportWorker0.log",
+        "AssetImportWorker1.log",
+        "AssetImportWorker2.log",
+        "AssetImportWorker3.log",
+        "Packages-Update.log"
+      ]
+    },
+    "Packages": {
+      "path": "Packages",
+      "purpose": null,
+      "fileCount": 2,
+      "lastAccessed": 1779390942502,
+      "keyFiles": [
+        "manifest.json",
+        "packages-lock.json"
+      ]
+    },
+    "ProfilerCaptures": {
+      "path": "ProfilerCaptures",
+      "purpose": null,
+      "fileCount": 0,
+      "lastAccessed": 1779390942503,
+      "keyFiles": []
+    },
+    "ProjectSettings": {
+      "path": "ProjectSettings",
+      "purpose": null,
+      "fileCount": 25,
+      "lastAccessed": 1779390942503,
+      "keyFiles": [
+        "AudioManager.asset",
+        "ClusterInputManager.asset",
+        "DynamicsManager.asset",
+        "EditorBuildSettings.asset",
+        "EditorSettings.asset"
+      ]
+    },
+    "Temp": {
+      "path": "Temp",
+      "purpose": null,
+      "fileCount": 6,
+      "lastAccessed": 1779390942504,
+      "keyFiles": [
+        "FSTimeGet-51936de3317c7a347b42132756b576fd",
+        "FSTimeGet-53d239e9c4635a94b9c910940ff25841",
+        "FSTimeGet-6b5c374e096284e4184b4579fb7ca46d",
+        "FSTimeGet-9951c4b60dc9171479cf296fd5a241ee",
+        "FSTimeGet-f57a2de209ef5d6449920e9242eb2f91"
+      ]
+    },
+    "UserSettings": {
+      "path": "UserSettings",
+      "purpose": null,
+      "fileCount": 3,
+      "lastAccessed": 1779390942505,
+      "keyFiles": [
+        "EditorUserSettings.asset",
+        "Search.index",
+        "Search.settings"
+      ]
+    }
+  },
+  "hotPaths": [
+    {
+      "path": "",
+      "accessCount": 13,
+      "lastAccessed": 1779392493044,
+      "type": "directory"
+    },
+    {
+      "path": "Assets\\_Pachinko\\Scripts\\Pachinko.cs",
+      "accessCount": 7,
+      "lastAccessed": 1779392513362,
+      "type": "file"
+    },
+    {
+      "path": "CLAUDE.md",
+      "accessCount": 7,
+      "lastAccessed": 1779393233665,
+      "type": "file"
+    },
+    {
+      "path": "docs\\brainstorms\\2026-05-21-plinko-game-brainstorm.md",
+      "accessCount": 5,
+      "lastAccessed": 1779392121226,
+      "type": "file"
+    },
+    {
+      "path": "docs\\plans\\2026-05-21-feat-plinko-game-core-plan.md",
+      "accessCount": 4,
+      "lastAccessed": 1779392911057,
+      "type": "file"
+    },
+    {
+      "path": "Assets",
+      "accessCount": 3,
+      "lastAccessed": 1779392506528,
+      "type": "directory"
+    },
+    {
+      "path": "Packages\\manifest.json",
+      "accessCount": 1,
+      "lastAccessed": 1779391004315,
+      "type": "file"
+    },
+    {
+      "path": "ProjectSettings\\ProjectSettings.asset",
+      "accessCount": 1,
+      "lastAccessed": 1779391004457,
+      "type": "file"
+    },
+    {
+      "path": "ProjectSettings\\ProjectVersion.txt",
+      "accessCount": 1,
+      "lastAccessed": 1779391027206,
+      "type": "file"
+    }
+  ],
+  "userDirectives": []
+}
